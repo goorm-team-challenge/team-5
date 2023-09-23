@@ -19,6 +19,7 @@ function App() {
 	return (
 		<div className={styles.App}>
 			<Header toggleModal={onlySetOpenToggle}/>
+
 			<main className={styles.main}>
 				<ContentView/>
 
