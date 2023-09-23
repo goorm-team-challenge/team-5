@@ -2,7 +2,7 @@ import cn from 'classnames';
 
 import { Card } from '@/components';
 
-import { Typography, Collapse} from '@goorm-dev/gds-challenge';
+import { Typography, Collapse, Button, Icons } from '@goorm-dev/gds-challenge';
 
 // import styles from '../EmptyView/EmptyView.module.scss';
 import { useEffect, useState } from 'react';
@@ -240,15 +240,41 @@ const ContentView = () => {
         {
             dummy.slice().reverse().map((item, index) => (
                 <>
-                    <div style={{padding: '1rem 1.5rem', width: '100%',  border: '1px solid var(--gray-300)', lineHeight: '22px'}} key={index} onClick={() => toggleCollapse(index)}>
-                      {dummy.length - index} {item.name}
+                    <div style={{ padding: '1rem 1.5rem', width: '100%',  border: '1px solid var(--gray-300)', lineHeight: '22px'}} key={index} onClick={() => toggleCollapse(index)}>
+                        <div style={{position:'relative'}}>
+                            {dummy.length - index} {item.name}
+                             <div style={{position:'absolute', height:'100%', right:'10px', bottom:'10%'}}>
+                                <Button iconSide="right" size="md" color="basic" content="start" active={false} block={false} outline={false} disabled={false} style={{marginRight:'10px'}}>수정하기</Button>
+                                <Button iconSide="right" size="md" color="basic" content="start" active={false} block={false} outline={false} disabled={false} style={{marginRight:'10px'}}>삭제하기</Button>
+                                <button>{index === openCollapseIndex?'위':'아래'}</button>
+                            </div>
+                        </div>
+                       
                     </div>
                     <Collapse isOpen={index === openCollapseIndex}>
-                        <Card center type='content' padding="none"  children={items}>
-                            1
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            이름
                         </Card>
-                        <Card center type='content' padding="none"  children={items}>
-                            1
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            전화번호
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 1
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 2
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 2-1
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 2-2
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 3
+                        </Card>
+                        <Card center type='content' padding="none"  children={items} style={{padding:'20px 0px'}}>
+                            질문 4
                         </Card>
                      </Collapse>
                 </>
