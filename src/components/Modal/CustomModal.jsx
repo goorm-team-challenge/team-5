@@ -16,7 +16,7 @@ function CustomModal({isOpen, toggle}) {
 	
 	return (
 		<div>
-   	  	  <Modal isOpen={isOpen} toggle={toggle}>
+   	  	  <Modal isOpen={isOpen} >
         	<Modal.Header toggle={toggle}>
             헤더
         	</Modal.Header>
