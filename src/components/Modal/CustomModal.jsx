@@ -21,6 +21,11 @@ function CustomModal({isOpen, onlySetOpenToggle}) {
 	isEmail : true,
 	isSMS : true,
   });
+	
+  const [form3Data, setForm3Data] = useState({
+	  selectedButton: 0,
+	  selectedContent: '',
+  })
 		
 
   const nextPage = () => {
@@ -40,8 +45,8 @@ function CustomModal({isOpen, onlySetOpenToggle}) {
           <Modal.Body>
              {currentPage === 1 && <Modal_1 formData={form1Data} setFormData={setForm1Data}/>}
           	 {currentPage === 2 && <Modal_2/>}
-        	 {currentPage === 3 && <Modal_3/>}
-        	 {currentPage === 4 && <Modal_4/>}
+        	 {currentPage === 3 && <Modal_3 formData={form3Data} setFormData={setForm3Data}/>}
+      		 {currentPage === 4 && <Modal_4/>}
           </Modal.Body>
           <Modal.Footer between>
 		    <CarouselIndicators length={4} activeIndex={currentPage - 1} onClickWithIndex={(index) => setCurrentPage(index + 1)}></CarouselIndicators>
