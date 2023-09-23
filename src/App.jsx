@@ -7,13 +7,13 @@ function App() {
 	
 	const [isOpen, setIsOpen] = useState(false);
 	
-	const toggle = () => {
+	const onlySetOpenToggle = () => {
    		setIsOpen(!isOpen);
   	};
 	
 	return (
 		<div className={styles.App}>
-			<Header toggleModal={toggle}/>
+			<Header toggleModal={onlySetOpenToggle}/>
 			<main className={styles.main}>
 				{
 					localStorage.length != 0?
@@ -21,7 +21,7 @@ function App() {
 					:
 					<EmptyView />
 				}
-				<CustomModal isOpen={isOpen} toggle={toggle}/>
+				<CustomModal isOpen={isOpen} onlySetOpenToggle={onlySetOpenToggle}/>
 				<EmptyView  />
 			</main>
 		</div>

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { CarouselIndicators, Modal, Button } from '@goorm-dev/gds-challenge';
 import { Modal_1, Modal_2, Modal_3, Modal_4} from '@/components';
 
-function CustomModal({isOpen}) {
+function CustomModal({isOpen, onlySetOpenToggle}) {
 	
   const [currentPage, setCurrentPage] = useState(1);
 	
   const toggle = () => {
-  	setIsOpen(!isOpen);
+	  onlySetOpenToggle();	
   };
 	
   const [form1Data, setForm1Data] = useState({
