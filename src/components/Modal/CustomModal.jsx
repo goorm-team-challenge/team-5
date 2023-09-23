@@ -2,9 +2,26 @@ import React, { useState } from 'react';
 import { CarouselIndicators, Modal, Button } from '@goorm-dev/gds-challenge';
 import { Modal_1, Modal_2, Modal_3, Modal_4} from '@/components';
 
-function CustomModal({isOpen, toggle}) {
+function CustomModal({isOpen}) {
 	
   const [currentPage, setCurrentPage] = useState(1);
+	
+  const toggle = () => {
+  	setIsOpen(!isOpen);
+  };
+	
+  const [form1Data, setForm1Data] = useState({
+    name: '',
+    phoneNumber: '',
+    email: '',
+	isAll: true,
+	isPersonal : true,
+	isMarketing : true,
+	isAd : true,
+	isEmail : true,
+	isSMS : true,
+  });
+		
 
   const nextPage = () => {
     if (currentPage < 4) {
@@ -21,7 +38,7 @@ function CustomModal({isOpen, toggle}) {
             헤더
         	</Modal.Header>
           <Modal.Body>
-             {currentPage === 1 && <Modal_1/>}
+             {currentPage === 1 && <Modal_1 formData={form1Data} setFormData={setForm1Data}/>}
           	 {currentPage === 2 && <Modal_2/>}
         	 {currentPage === 3 && <Modal_3/>}
         	 {currentPage === 4 && <Modal_4/>}
