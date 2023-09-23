@@ -36,6 +36,12 @@ function CustomModal({isOpen, onlySetOpenToggle}) {
     }
   };
 	
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+	
 	return (
 		<div>
    	  	  <Modal isOpen={isOpen} >
@@ -50,8 +56,11 @@ function CustomModal({isOpen, onlySetOpenToggle}) {
           </Modal.Body>
           <Modal.Footer between>
 		    <CarouselIndicators length={4} activeIndex={currentPage - 1} onClickWithIndex={(index) => setCurrentPage(index + 1)}></CarouselIndicators>
-            <Button onClick={nextPage}>다음</Button>
-          </Modal.Footer>
+            <div>          
+				{currentPage !== 1 && <Button onClick={prevPage} color="link">이전</Button>}
+            	{currentPage < 4 ? <Button onClick={nextPage}>다음</Button> : <Button onClick={toggle}>제출하기</Button>}
+		    </div>
+	      </Modal.Footer>
    		 </Modal>
 		</div>
 	);
