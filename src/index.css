@@ -17,3 +17,21 @@ code {
 .btn-block+.btn-block {
   margin-top: 0;
 }
+
+.horizontal-checkboxes {
+    display: flex;
+}
+
+.horizontal-buttons {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.checkbox-spacing {
+    width: 20px; 
+}
+
+.extended-button {
+    width: 180px;
+}
