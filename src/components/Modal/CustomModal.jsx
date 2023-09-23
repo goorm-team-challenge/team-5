@@ -46,7 +46,7 @@ function CustomModal({isOpen, onlySetOpenToggle}) {
 		<div>
    	  	  <Modal isOpen={isOpen} >
         	<Modal.Header toggle={toggle}>
-            헤더
+            
         	</Modal.Header>
           <Modal.Body>
              {currentPage === 1 && <Modal_1 formData={form1Data} setFormData={setForm1Data}/>}
