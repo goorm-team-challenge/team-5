@@ -1,13 +1,21 @@
-import { EmptyView, Header } from '@/components';
-
+import React, { useState } from 'react';
+import { EmptyView, Header, CustomModal } from '@/components';
 import styles from './App.module.scss';
 
 function App() {
+	
+	const [isOpen, setIsOpen] = useState(false);
+	
+	const toggle = () => {
+   		setIsOpen(!isOpen);
+  	};
+	
 	return (
 		<div className={styles.App}>
-			<Header />
+			<Header toggleModal={toggle}/>
 			<main className={styles.main}>
-				<EmptyView />
+				<CustomModal isOpen={isOpen} toggle={toggle}/>
+				<EmptyView  />
 			</main>
 		</div>
 	);
